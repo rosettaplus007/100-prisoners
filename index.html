@@ -1,0 +1,765 @@
+<html lang="en" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths -webkit- js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface no-generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths -webkit-"><head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+    <title>100 Prisoners | ROSETTA++</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+    <style media="" data-href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic">/* latin-ext */
+    
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 100;
+      src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u-w4BMUTPHjxsIPx-mPCLQ7A.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 100;
+      src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u-w4BMUTPHjxsIPx-oPCI.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 300;
+      src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI9w2_FQft1dw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 300;
+      src: local('Lato Light Italic'), local('Lato-LightItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI9w2_Gwft.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAUi-qJCY.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 400;
+      src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHjxsAXC-q.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 700;
+      src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_FQft1dw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 700;
+      src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI5wq_Gwft.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 900;
+      src: local('Lato Black Italic'), local('Lato-BlackItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI3wi_FQft1dw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: italic;
+      font-weight: 900;
+      src: local('Lato Black Italic'), local('Lato-BlackItalic'), url(https://fonts.gstatic.com/s/lato/v16/S6u_w4BMUTPHjxsI3wi_Gwft.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 100;
+      src: local('Lato Hairline'), local('Lato-Hairline'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHh30AUi-qJCY.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 100;
+      src: local('Lato Hairline'), local('Lato-Hairline'), url(https://fonts.gstatic.com/s/lato/v16/S6u8w4BMUTPHh30AXC-q.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwaPGR_p.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 300;
+      src: local('Lato Light'), local('Lato-Light'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh7USSwiPGQ.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjxAwXjeu.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v16/S6uyw4BMUTPHjx4wXg.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwaPGR_p.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh6UVSwiPGQ.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 900;
+      src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwaPGR_p.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Lato';
+      font-style: normal;
+      font-weight: 900;
+      src: local('Lato Black'), local('Lato-Black'), url(https://fonts.gstatic.com/s/lato/v16/S6u9w4BMUTPHh50XSwiPGQ.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    </style>
+    <link href="https://dev.see8ch.com/see8ch/v3/fonts/ss-social/ss-social.css" rel="stylesheet" data-inprogress="">
+    <link href="https://dev.see8ch.com/see8ch/v3/fonts/ss-standard/ss-standard.css" rel="stylesheet" data-inprogress="">
+    <style>
+    body {
+      background: #efefef;
+      font-size: 62.5%;
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      color: #B6B6B6;
+    }
+    body section {
+      background: white;
+      margin: 60px auto 120px;
+      border-top: 15px solid #313A3D;
+      text-align: center;
+      padding: 50px 0 110px;
+      width: 80%;
+      max-width: 1100px;
+    }
+    body section h1 {
+      margin-bottom: 40px;
+      font-size: 4em;
+      text-transform: uppercase;
+      font-family: 'Lato', sans-serif;
+      font-weight: 100;
+    }
+p{
+  font-size: 1.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.button {
+  display: -webkit-inline-box;
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #BFC0C0;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #BFC0C0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+#button-5 {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+#button-5 a {
+  position: relative;
+  -webkit-transition: all .45s ease-Out;
+  transition: all .45s ease-Out;
+}
+
+#translate {
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
+  width: 100%;
+  height: 250%;
+  left: -200px;
+  top: -30px;
+  background: #BFC0C0;
+  position: absolute;
+  -webkit-transition: all .3s ease-Out;
+  transition: all .3s ease-Out;
+}
+
+#button-5:hover #translate {
+  left: 0;
+}
+
+#button-5:hover a {
+  color: #2D3142;
+}
+    </style>
+    <script>
+      var code2 = "#include <iostream>\t//for output\n" +
+                "#include <algorithm>\t//for shuffle\n" +
+                "#include <stdlib.h>\t//for rand()\n" +
+                " \n" +
+                "using namespace std;\n" +
+                " \n" +
+                "int* setDrawers() {\n" +
+                "\tint drawers[100];\n" +
+                "\tfor (int i = 0; i < 100; i++) {\n" +
+                "\t\tdrawers[i] = i;\n" +
+                "\t}\n" +
+                "\trandom_shuffle(&drawers[0], &drawers[99]);\n" +
+                "\treturn drawers;\n" +
+                "}\n" +
+                " \n" +
+                "bool playRandom()\n" +
+                "{\n" +
+                "\tint* drawers = setDrawers();\n" +
+                "\tbool openedDrawers[100] = { 0 };\n" +
+                "\tfor (int prisonerNum = 0; prisonerNum < 100; prisonerNum++) {\t//loops through prisoners numbered 0 through 99\n" +
+                "\t\tbool prisonerSuccess = false;\n" +
+                "\t\tfor (int i = 0; i < 50; i++) {\t//loops through 50 draws for each prisoner \n" +
+                "\t\t\tint drawerNum;\n" +
+                "\t\t\twhile (true) {\n" +
+                "\t\t\t\tdrawerNum = rand() % 100;\n" +
+                "\t\t\t\tif (!openedDrawers[drawerNum]) {\n" +
+                "\t\t\t\t\topenedDrawers[drawerNum] = true;\n" +
+                "\t\t\t\t\tcout << endl;\n" +
+                "\t\t\t\t\tbreak;\n" +
+                "\t\t\t\t}\n" +
+                "\t\t\t}\n" +
+                "\t\t\tif (*(drawers + drawerNum) == prisonerNum) {\n" +
+                "\t\t\t\tprisonerSuccess = true;\n" +
+                "\t\t\t\tbreak;\n" +
+                "\t\t\t}\n" +
+                "\t\t}\n" +
+                "\t\tif (!prisonerSuccess)\n" +
+                "\t\t\treturn false;\n" +
+                "\t}\n" +
+                "\treturn true;\n" +
+                "}\n" +
+                " \n" +
+                "bool playOptimal()\n" +
+                "{\n" +
+                "\tint* drawers = setDrawers();\n" +
+                "\tfor (int prisonerNum = 0; prisonerNum < 100; prisonerNum++) {\n" +
+                "\t\tbool prisonerSuccess = false;\n" +
+                "\t\tint checkDrawerNum = prisonerNum;\n" +
+                "\t\tfor (int i = 0; i < 50; i++) {\n" +
+                "\t\t\tif (*(drawers + checkDrawerNum) == prisonerNum) {\n" +
+                "\t\t\t\tprisonerSuccess = true;\n" +
+                "\t\t\t\tbreak;\n" +
+                "\t\t\t}\n" +
+                "\t\t\telse\n" +
+                "\t\t\t\tcheckDrawerNum = *(drawers + checkDrawerNum);\n" +
+                "\t\t}\n" +
+                "\t\tif (!prisonerSuccess)\n" +
+                "\t\t\treturn false;\n" +
+                "\t}\n" +
+                "\treturn true;\n" +
+                "}\n" +
+                " \n" +
+                "double simulate(string strategy)\n" +
+                "{\n" +
+                "\tint numberOfSuccesses = 0;\n" +
+                "\tfor (int i = 0; i <= 10000; i++) {\n" +
+                "\t\tif ((strategy == \"random\" && playRandom()) || (strategy == \"optimal\" && playOptimal())) //will run playRandom or playOptimal but not both becuase of short-circuit evaluation\n" +
+                "\t\t\tnumberOfSuccesses++;\n" +
+                "\t}\n" +
+                "\treturn numberOfSuccesses / 100.0;\n" +
+                "}\n" +
+                " \n" +
+                "int main()\n" +
+                "{\n" +
+                "\tcout << \"Random Strategy: \" << simulate(\"random\") << \"%\" << endl;\n" +
+                "\tcout << \"Optimal Strategy: \" << simulate(\"optimal\") << \"%\" << endl;\n" +
+                "\tsystem(\"PAUSE\");\n" +
+                "\treturn 0;\n" +
+                "}";
+      var code3 = "import java.util.Collections;\n" +
+                "import java.util.List;\n" +
+                "import java.util.Objects;\n" +
+                "import java.util.function.Function;\n" +
+                "import java.util.function.Supplier;\n" +
+                "import java.util.stream.Collectors;\n" +
+                "import java.util.stream.IntStream;\n" +
+                " \n" +
+                "public class Main {\n" +
+                "    private static boolean playOptimal(int n) {\n" +
+                "        List<Integer> secretList = IntStream.range(0, n).boxed().collect(Collectors.toList());\n" +
+                "        Collections.shuffle(secretList);\n" +
+                " \n" +
+                "        prisoner:\n" +
+                "        for (int i = 0; i < secretList.size(); ++i) {\n" +
+                "            int prev = i;\n" +
+                "            for (int j = 0; j < secretList.size() / 2; ++j) {\n" +
+                "                if (secretList.get(prev) == i) {\n" +
+                "                    continue prisoner;\n" +
+                "                }\n" +
+                "                prev = secretList.get(prev);\n" +
+                "            }\n" +
+                "            return false;\n" +
+                "        }\n" +
+                "        return true;\n" +
+                "    }\n" +
+                " \n" +
+                "    private static boolean playRandom(int n) {\n" +
+                "        List<Integer> secretList = IntStream.range(0, n).boxed().collect(Collectors.toList());\n" +
+                "        Collections.shuffle(secretList);\n" +
+                " \n" +
+                "        prisoner:\n" +
+                "        for (Integer i : secretList) {\n" +
+                "            List<Integer> trialList = IntStream.range(0, n).boxed().collect(Collectors.toList());\n" +
+                "            Collections.shuffle(trialList);\n" +
+                " \n" +
+                "            for (int j = 0; j < trialList.size() / 2; ++j) {\n" +
+                "                if (Objects.equals(trialList.get(j), i)) {\n" +
+                "                    continue prisoner;\n" +
+                "                }\n" +
+                "            }\n" +
+                " \n" +
+                "            return false;\n" +
+                "        }\n" +
+                "        return true;\n" +
+                "    }\n" +
+                " \n" +
+                "    private static double exec(int n, int p, Function<Integer, Boolean> play) {\n" +
+                "        int succ = 0;\n" +
+                "        for (int i = 0; i < n; ++i) {\n" +
+                "            if (play.apply(p)) {\n" +
+                "                succ++;\n" +
+                "            }\n" +
+                "        }\n" +
+                "        return (succ * 100.0) / n;\n" +
+                "    }\n" +
+                " \n" +
+                "    public static void main(String[] args) {\n" +
+                "        final int n = 100_000;\n" +
+                "        final int p = 100;\n" +
+                "        System.out.printf(\"# of executions: %d\\n\", n);\n" +
+                "        System.out.printf(\"Optimal play success rate: %f%%\\n\", exec(n, p, Main::playOptimal));\n" +
+                "        System.out.printf(\"Random play success rate: %f%%\\n\", exec(n, p, Main::playRandom));\n" +
+                "    }\n" +
+                "}";
+      var code4 = "function randomNormal() {\n" +
+                "  return Math.cos(2 * Math.PI * Math.random()) * Math.sqrt(-2 * Math.log(Math.random()))\n" +
+                "}\n" +
+                " \n" +
+                "var a = []\n" +
+                "for (var i=0; i < 1000; i++){\n" +
+                "  a[i] = randomNormal() / 2 + 1\n" +
+                "}";
+      var code5 = "import random\n" +
+                " \n" +
+                "def play_random(n):\n" +
+                "    # using 0-99 instead of ranges 1-100\n" +
+                "    pardoned = 0\n" +
+                "    in_drawer = list(range(100))\n" +
+                "    sampler = list(range(100))\n" +
+                "    for _round in range(n):\n" +
+                "        random.shuffle(in_drawer)\n" +
+                "        found = False\n" +
+                "        for prisoner in range(100):\n" +
+                "            found = False\n" +
+                "            for reveal in random.sample(sampler, 50):\n" +
+                "                card = in_drawer[reveal]\n" +
+                "                if card == prisoner:\n" +
+                "                    found = True\n" +
+                "                    break\n" +
+                "            if not found:\n" +
+                "                break\n" +
+                "        if found:\n" +
+                "            pardoned += 1\n" +
+                "    return pardoned / n * 100   # %\n" +
+                " \n" +
+                "def play_optimal(n):\n" +
+                "    # using 0-99 instead of ranges 1-100\n" +
+                "    pardoned = 0\n" +
+                "    in_drawer = list(range(100))\n" +
+                "    for _round in range(n):\n" +
+                "        random.shuffle(in_drawer)\n" +
+                "        for prisoner in range(100):\n" +
+                "            reveal = prisoner\n" +
+                "            found = False\n" +
+                "            for go in range(50):\n" +
+                "                card = in_drawer[reveal]\n" +
+                "                if card == prisoner:\n" +
+                "                    found = True\n" +
+                "                    break\n" +
+                "                reveal = card\n" +
+                "            if not found:\n" +
+                "                break\n" +
+                "        if found:\n" +
+                "            pardoned += 1\n" +
+                "    return pardoned / n * 100   # %\n" +
+                " \n" +
+                "if __name__ == '__main__':\n" +
+                "    n = 100_000\n" +
+                "    print(\" Simulation count:\", n)\n" +
+                "    print(f\" Random play wins: {play_random(n):4.1f}% of simulations\")\n" +
+                "    print(f\"Optimal play wins: {play_optimal(n):4.1f}% of simulations\")";
+      var code55 = "'''100 Prisoners'''\n" +
+                " \n" +
+                "from random import randint, sample\n" +
+                " \n" +
+                " \n" +
+                "# allChainedPathsAreShort :: Int -> IO (0|1)\n" +
+                "def allChainedPathsAreShort(n):\n" +
+                "    '''1 if none of the index-chasing cycles in a shuffled\n" +
+                "       sample of [1..n] cards are longer than half the\n" +
+                "       sample size. Otherwise, 0.\n" +
+                "    '''\n" +
+                "    limit = n // 2\n" +
+                "    xs = range(1, 1 + n)\n" +
+                "    shuffled = sample(xs, k=n)\n" +
+                " \n" +
+                "    # A cycle of boxes, drawn from a shuffled\n" +
+                "    # sample, which includes the given target.\n" +
+                "    def cycleIncluding(target):\n" +
+                "        boxChain = [target]\n" +
+                "        v = shuffled[target - 1]\n" +
+                "        while v != target:\n" +
+                "            boxChain.append(v)\n" +
+                "            v = shuffled[v - 1]\n" +
+                "        return boxChain\n" +
+                " \n" +
+                "    # Nothing if the target list is empty, or if the cycle which contains the\n" +
+                "    # first target is larger than half the sample size.\n" +
+                "    # Otherwise, just a cycle of enchained boxes containing the first target\n" +
+                "    # in the list, tupled with the residue of any remaining targets which\n" +
+                "    # fall outside that cycle.\n" +
+                "    def boxCycle(targets):\n" +
+                "        if targets:\n" +
+                "            boxChain = cycleIncluding(targets[0])\n" +
+                "            return Just((\n" +
+                "                difference(targets[1:])(boxChain),\n" +
+                "                boxChain\n" +
+                "            )) if limit >= len(boxChain) else Nothing()\n" +
+                "        else:\n" +
+                "            return Nothing()\n" +
+                " \n" +
+                "    # No cycles longer than half of total box count ?\n" +
+                "    return int(n == sum(map(len, unfoldr(boxCycle)(xs))))\n" +
+                " \n" +
+                " \n" +
+                "# randomTrialResult :: RandomIO (0|1) -> Int -> (0|1)\n" +
+                "def randomTrialResult(coin):\n" +
+                "    '''1 if every one of the prisoners finds their ticket\n" +
+                "       in an arbitrary half of the sample. Otherwise 0.\n" +
+                "    '''\n" +
+                "    return lambda n: int(all(\n" +
+                "        coin(x) for x in range(1, 1 + n)\n" +
+                "    ))\n" +
+                " \n" +
+                " \n" +
+                "# TEST ----------------------------------------------------\n" +
+                "# main :: IO ()\n" +
+                "def main():\n" +
+                "    '''Two sampling techniques constrasted with 100 drawers\n" +
+                "       and 100 prisoners, over 100,000 trial runs.\n" +
+                "    '''\n" +
+                "    halfOfDrawers = randomRInt(0)(1)\n" +
+                " \n" +
+                "    def optimalDrawerSampling(x):\n" +
+                "        return allChainedPathsAreShort(x)\n" +
+                " \n" +
+                "    def randomDrawerSampling(x):\n" +
+                "        return randomTrialResult(halfOfDrawers)(x)\n" +
+                " \n" +
+                "    # kSamplesWithNBoxes :: Int -> Int -> String\n" +
+                "    def kSamplesWithNBoxes(k):\n" +
+                "        tests = range(1, 1 + k)\n" +
+                "        return lambda n: '\\n\\n' + fTable(\n" +
+                "            str(k) + ' tests of optimal vs random drawer-sampling ' +\n" +
+                "            'with ' + str(n) + ' boxes: \\n'\n" +
+                "        )(fName)(lambda r: '{:.2%}'.format(r))(\n" +
+                "            lambda f: sum(f(n) for x in tests) / k\n" +
+                "        )([\n" +
+                "            optimalDrawerSampling,\n" +
+                "            randomDrawerSampling,\n" +
+                "        ])\n" +
+                " \n" +
+                "    print(kSamplesWithNBoxes(10000)(10))\n" +
+                " \n" +
+                "    print(kSamplesWithNBoxes(10000)(100))\n" +
+                " \n" +
+                "    print(kSamplesWithNBoxes(100000)(100))\n" +
+                " \n" +
+                " \n" +
+                "# ------------------------DISPLAY--------------------------\n" +
+                " \n" +
+                "# fTable :: String -> (a -> String) ->\n" +
+                "# (b -> String) -> (a -> b) -> [a] -> String\n" +
+                "def fTable(s):\n" +
+                "    '''Heading -> x display function -> fx display function ->\n" +
+                "       f -> xs -> tabular string.\n" +
+                "    '''\n" +
+                "    def go(xShow, fxShow, f, xs):\n" +
+                "        ys = [xShow(x) for x in xs]\n" +
+                "        w = max(map(len, ys))\n" +
+                "        return s + '\\n' + '\\n'.join(map(\n" +
+                "            lambda x, y: y.rjust(w, ' ') + ' -> ' + fxShow(f(x)),\n" +
+                "            xs, ys\n" +
+                "        ))\n" +
+                "    return lambda xShow: lambda fxShow: lambda f: lambda xs: go(\n" +
+                "        xShow, fxShow, f, xs\n" +
+                "    )\n" +
+                " \n" +
+                " \n" +
+                "# fname :: (a -> b) -> String\n" +
+                "def fName(f):\n" +
+                "    '''Name bound to the given function.'''\n" +
+                "    return f.__name__\n" +
+                " \n" +
+                " \n" +
+                "# ------------------------GENERIC -------------------------\n" +
+                " \n" +
+                "# Just :: a -> Maybe a\n" +
+                "def Just(x):\n" +
+                "    '''Constructor for an inhabited Maybe (option type) value.\n" +
+                "       Wrapper containing the result of a computation.\n" +
+                "    '''\n" +
+                "    return {'type': 'Maybe', 'Nothing': False, 'Just': x}\n" +
+                " \n" +
+                " \n" +
+                "# Nothing :: Maybe a\n" +
+                "def Nothing():\n" +
+                "    '''Constructor for an empty Maybe (option type) value.\n" +
+                "       Empty wrapper returned where a computation is not possible.\n" +
+                "    '''\n" +
+                "    return {'type': 'Maybe', 'Nothing': True}\n" +
+                " \n" +
+                " \n" +
+                "# difference :: Eq a => [a] -> [a] -> [a]\n" +
+                "def difference(xs):\n" +
+                "    '''All elements of xs, except any also found in ys.'''\n" +
+                "    return lambda ys: list(set(xs) - set(ys))\n" +
+                " \n" +
+                " \n" +
+                "# randomRInt :: Int -> Int -> IO () -> Int\n" +
+                "def randomRInt(m):\n" +
+                "    '''The return value of randomRInt is itself\n" +
+                "       a function. The returned function, whenever\n" +
+                "       called, yields a a new pseudo-random integer\n" +
+                "       in the range [m..n].\n" +
+                "    '''\n" +
+                "    return lambda n: lambda _: randint(m, n)\n" +
+                " \n" +
+                " \n" +
+                "# unfoldr(lambda x: Just((x, x - 1)) if 0 != x else Nothing())(10)\n" +
+                "# -> [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]\n" +
+                "# unfoldr :: (b -> Maybe (a, b)) -> b -> [a]\n" +
+                "def unfoldr(f):\n" +
+                "    '''Dual to reduce or foldr.\n" +
+                "       Where catamorphism reduces a list to a summary value,\n" +
+                "       the anamorphic unfoldr builds a list from a seed value.\n" +
+                "       As long as f returns Just(a, b), a is prepended to the list,\n" +
+                "       and the residual b is used as the argument for the next\n" +
+                "       application of f.\n" +
+                "       When f returns Nothing, the completed list is returned.\n" +
+                "    '''\n" +
+                "    def go(v):\n" +
+                "        xr = v, v\n" +
+                "        xs = []\n" +
+                "        while True:\n" +
+                "            mb = f(xr[0])\n" +
+                "            if mb.get('Nothing'):\n" +
+                "                return xs\n" +
+                "            else:\n" +
+                "                xr = mb.get('Just')\n" +
+                "                xs.append(xr[1])\n" +
+                "        return xs\n" +
+                "    return lambda x: go(x)\n" +
+                " \n" +
+                " \n" +
+                "# MAIN ---\n" +
+                "if __name__ == '__main__':\n" +
+                "    main()";
+    </script>
+    <script>
+      window.console = window.console || function(t) {};
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script>
+      if (document.location.search.match(/type=embed/gi)) {
+        window.parent.postMessage("resize", "*");
+      }
+    </script>
+    </head>
+    <body translate="no">
+    <section id="hire" style="height: fit-content;padding: 1rem;">    
+        <h1 style="color: #000000;font-weight: bold;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+          100 Prisoners | ROSETTA ++</h1>
+    </section>
+    <section id="hire" style="display: inline-block;width: 60%;margin-left: 1rem;padding: 0.5rem;">    
+      <h1 style="font-weight: 500;">C++</h1>  
+      <iframe src="t1.cpp" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+    </section>
+    <section style="font-size: 1.5rem;display: inline-block;width: 35%;margin-left: 2rem;padding-top: 0.5rem;">
+      <h3 style="color: #456FFF;">Software Metrics</h3>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a><span onclick="cplus(code2,'p2')">Analyze</span></a>
+      </div>
+      <p id="p2"></p>
+    </section>
+
+   
+    <section id="hire" style="display: inline-block;width: 60%;margin-left: 1rem;padding: 0.5rem;">    
+      <h1 style="font-weight: 500;">JAVA</h1>  
+      <iframe src="t1.java" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+    </section>
+    <section style="font-size: 1.5rem;display: inline-block;width: 35%;margin-left: 2rem;padding-top: 0.5rem;">
+      <h3 style="color: #456FFF;">Software Metrics</h3>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a><span onclick="java(code3,'p3')">Analyze</span></a>
+      </div>
+      <p id="p3"></p>
+    </section>
+
+    <section id="hire" style="display: inline-block;width: 60%;margin-left: 1rem;padding: 0.5rem;">    
+      <h1 style="font-weight: 500;">PYTHON (Procedural)</h1>  
+      <iframe src="t1.py" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+    </section>
+    <section style="font-size: 1.5rem;display: inline-block;width: 35%;margin-left: 2rem;padding-top: 0.5rem;">
+      <h3 style="color: #456FFF;">Software Metrics</h3>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a><span onclick="python(code5,'p5')">Analyze</span></a>
+      </div>
+      <p id="p5"></p>
+    </section>
+
+    <section id="hire" style="display: inline-block;width: 60%;margin-left: 1rem;padding: 0.5rem;">    
+      <h1 style="font-weight: 500;">PYTHON (Functional)</h1>  
+      <iframe src="t11.py" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+    </section>
+    <section style="font-size: 1.5rem;display: inline-block;width: 35%;margin-left: 2rem;padding-top: 0.5rem;">
+      <h3 style="color: #456FFF;">Software Metrics</h3>
+      <div class="button" id="button-5">
+        <div id="translate"></div>
+        <a><span onclick="python(code55,'p55')">Analyze</span></a>
+      </div>
+      <p id="p55"></p>
+    </section>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-db44b196776521ea816683afab021f757616c80860d31da6232dedb8d7cc4862.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      function c(str,id)
+      {
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var doop;
+              doop = JSON.parse(this.responseText).message;
+              document.getElementById(id).innerHTML = doop  
+            }
+          };
+          xhttp.open("POST", "https://young-shelf-21550.herokuapp.com/", false);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          console.log(str);
+          xhttp.send('link='+str);    
+      }
+      function cplus(str,id)
+      {
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var doop;
+              doop = JSON.parse(this.responseText).message;
+              document.getElementById(id).innerHTML = doop  
+            }
+          };
+          xhttp.open("POST", "https://young-shelf-21550.herokuapp.com/", false);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          console.log(str);
+          xhttp.send('link='+str);    
+      }
+      function java(str,id)
+      {
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var doop;
+              doop = JSON.parse(this.responseText).message;
+              document.getElementById(id).innerHTML = doop  
+            }
+          };
+          xhttp.open("POST", "https://cryptic-oasis-46862.herokuapp.com/", false);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          console.log(str);
+          xhttp.send('link='+str);    
+      }
+      function javascript(str,id)
+      {
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var doop;
+              doop = JSON.parse(this.responseText).message;
+              document.getElementById(id).innerHTML = doop  
+            }
+          };
+          xhttp.open("POST", "https://whispering-chamber-90418.herokuapp.com/", false);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          console.log(str);
+          xhttp.send('link='+str);    
+      }
+      function python(str,id)
+      {
+        var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              var doop;
+              doop = JSON.parse(this.responseText).message;
+              document.getElementById(id).innerHTML = doop  
+            }
+          };
+          xhttp.open("POST", "https://arcane-shelf-66019.herokuapp.com/", false);
+          xhttp.setRequestHeader('Content-type', "application/x-www-form-urlencoded")
+          console.log(str);
+          xhttp.send('link='+str);    
+      } 
+    </script>
+
+    
+</body></html>
